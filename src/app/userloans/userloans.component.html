@@ -1,0 +1,47 @@
+<input [(ngModel)] = "username"/>
+<div *ngIf= "checkuser()&&validation();else other_content">
+  <div>The value you have entered is 1</div>
+</div>
+<br>
+<ng-template #other_content>
+    <div *ngIf="validation();">You have entered some other value</div>
+  </ng-template>
+<br>
+<div>
+<h1><b>BUILT-IN PIPES</b></h1>
+<h1>{{abc}}</h1>
+<h1><b>To Lowercase:</b> {{abc | lowercase}}</h1>
+<h1><b>To Uppercase:</b>{{def | uppercase}}</h1>
+<h1><b>To Date:</b>{{d | date}}</h1>
+<h1><b>To JSON:</b>{{j | json}}</h1>
+<h1><b>Object.user:</b>{{j.user}}</h1>
+<h1><b>To currency:</b>{{cur | currency}}</h1>
+<h1><b>To Percentage:</b>{{percent | percent}}</h1>
+</div>
+<div>
+<h1><b>PARAMETERISED PIPES</b></h1>
+<h3><b>short</b>{{d|date:'short'}}</h3>
+<h3><b>medium</b>{{d|date:'medium'}}</h3>
+<h3><b>long</b>{{d|date:'long'}}</h3>
+<h3><b>full</b>{{d|date:'full'}}</h3>
+<h3><b>shortDate</b>{{d|date:'shortDate'}}</h3>
+<h3><b>longDate</b>{{d|date:'longDate'}}</h3>
+<h3><b>fullDate</b>{{d|date:'fullDate'}}</h3>
+<h3><b>shortTime</b>{{d|date:'shortTime'}}</h3>
+<h3><b>mediumTime</b>{{d|date:'mediumTime'}}</h3>
+<h3><b>longTime</b>{{d|date:'longTime'}}</h3>
+<h3><b>fullTime</b>{{d|date:'fullTime'}}</h3>
+<h3><b>inr</b>{{cur|currency:'inr'}}</h3>
+<h3><b>INR</b>{{cur|currency:'INR'}}</h3>
+<h3><b>percent</b>{{percent|percent:'3.2-4'}}</h3>
+</div>
+<div>
+<h1><b>CHAINING PIPES</b></h1>
+<h3><b>Combining 2 Pipes together: </b>{{d|date:'full'|uppercase}}</h3>
+</div>
+<div>
+<h1><b>CUSTOM PIPES</b></h1>
+<h3><b>Current Given </b>{{user.city}}</h3>
+<h3><b>Converted City </b>{{user.city | highlight:user.city : user.pincode}}</h3>
+<br><br>
+</div>
